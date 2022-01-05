@@ -1,0 +1,14 @@
+{% extends "auctions/layout.html" %}
+
+{% block title %}
+    Homepage
+{% endblock %}
+
+{% block body %}
+    <h2>Active Listings</h2>
+    <ol>
+    {% for item in data %}
+        <li><a href = "{{item.item_name}}">{{item}}</a></li>
+    {% endfor %}
+    </ol>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends "auctions/layout.html" %}
+
+{% block title %}
+    {{data.item_name}}
+{% endblock %}
+
+{% block body %}
+
+    <button class="float-right">Add</button>
+    <h2>Listing: {{data.item_name}}</h2><br>
+        <img style="width: 400px; height: 300px; overflow: hidden;" src="{{ data.item_image }}"><br><br>
+    <h3>Product Information/Specifications:</h3>
+    <ul>
+        <li>Product name : {{data.item_name}}</li>
+        <li>Category : {{data.item_category}}</li>
+        <li>Description : {{data.item_description}}</li>
+        <li>Start price : ${{data.start_price}}</li>
+        <li>Status : {{data.item_status}}</li>
+    </ul>
+    <hr>
+    <form>
+        {% csrf_token %}
+        {{form}}
+
+        <input type="submit" value="Bid">
+    </form>
+{% endblock %}
